@@ -88,7 +88,7 @@ export class LibrosComponent implements OnInit
         },
         (error) => {
           if(error!=null){
-            console.log("Hay un error ni el Hp"); ////BORRRAARRRR!!!
+            console.log("Hay un error"); 
           }
         }
       )

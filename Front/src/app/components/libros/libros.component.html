@@ -1,123 +1,92 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <!-- Compiled and minified CSS -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    <title>Document</title>
-</head>
-<body>
-    
     <div style="display: flex; justify-content: center;">
         <form #crearLibrosForm='ngForm' (ngSubmit)='agregarLibro()'>
             <header style="display: flex; justify-content: center; font-family: BankGothic Md BT; font-size: 30px; color:#c4342d; margin-bottom: 5px;">
                 Agregar un libro
             </header>
-            <div class="row">
-                <form class="col s12">
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">import_contacts</i>
-                            <input id="icon_prefix" type="text" class="validate" required #tituloLibro="ngModel"
-                            name="tituloLibro" [(ngModel)]="librosRegistrados.tituloLibro">
-                            <label for="icon_prefix">Título del libro</label>
-                        </div>
-                   </div>
-                   <div class="row">
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">perm_identity</i>
-                            <input id="icon_telephone" type="tel" class="validate" required #Autor="ngModel"
-                            name="Autor" [(ngModel)]="librosRegistrados.Autor">
-                            <label for="icon_telephone">Autor</label>
-                        </div>
-                   </div>
-                   <div class="row">
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">description</i>
-                            <input id="icon_telephone" type="tel" class="validate" required #Descripcion="ngModel"
-                            name="Descripcion" [(ngModel)]="librosRegistrados.Descripcion">
-                            <label for="icon_telephone">Descripción</label>
-                        </div>
-                   </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">today</i>
-                            <input id="icon_telephone" type="tel" class="validate" required #anioPublicacion="ngModel"
-                            name="anioPublicacion" [(ngModel)]="librosRegistrados.anioPublicacion">
-                            <label for="icon_telephone">Año de publicación</label>
-                        </div>
+            <div class="col-lg-auto mx-auto">
+                <div class="card">
+                    <div class="card-header" style="background: red; text-align: center; color: beige;">
+                        Agrega un libro
                     </div>
-                </form>
-            </div>
-            <button class="btn waves-effect waves-light" style="background: #c4342d; margin-top: -70px;" 
-            type="submit" name="action">Submit
-                <i class="material-icons right">send</i>
-            </button>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <div class="form-group">
+                                <input id="icon_prefix" type="text" class="validate" required #tituloLibro="ngModel"
+                                name="tituloLibro" [(ngModel)]="librosRegistrados.tituloLibro" placeholder="Ingrese el titulo">
+                                <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-info" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="margin-left: 2%;">
+                                    <path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z"/>
+                                    <circle cx="8" cy="4.5" r="1"/>
+                                </svg>
+                            </div>
+                            <div class="form-group">
+                                <input id="icon_telephone" type="tel" class="validate" required #Autor="ngModel"
+                                name="Autor" [(ngModel)]="librosRegistrados.Autor" placeholder="Nombre del autor">
+                                <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-file-person-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="margin-left: 2%;">
+                                    <path fill-rule="evenodd" d="M2 3a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V3zm6 7a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm5 2.755C12.146 11.825 10.623 11 8 11s-4.146.826-5 1.755V13a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-.245z"/>
+                                </svg>
+                            </div>
+                            <div class="form-group">
+                                <input id="icon_telephone" type="tel" class="validate" required #Descripcion="ngModel"
+                                name="Descripcion" [(ngModel)]="librosRegistrados.Descripcion" placeholder="Descripción">
+                                <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-card-text" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="margin-left: 2%;">
+                                    <path fill-rule="evenodd" d="M14.5 3h-13a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+                                    <path fill-rule="evenodd" d="M3 5.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 8zm0 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"/>
+                                </svg>
+                            </div>
+                            <div class="form-group">
+                                <input id="icon_telephone" type="tel" class="validate" required #anioPublicacion="ngModel"
+                                name="anioPublicacion" [(ngModel)]="librosRegistrados.anioPublicacion" placeholder="Año de publicación">
+                                <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-calendar-day" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="margin-left: 2%;">
+                                    <path d="M4.684 11.523v-2.3h2.261v-.61H4.684V6.801h2.464v-.61H4v5.332h.684zm3.296 0h.676V8.98c0-.554.227-1.007.953-1.007.125 0 .258.004.329.015v-.613a1.806 1.806 0 0 0-.254-.02c-.582 0-.891.32-1.012.567h-.02v-.504H7.98v4.105zm2.805-5.093c0 .238.192.425.43.425a.428.428 0 1 0 0-.855.426.426 0 0 0-.43.43zm.094 5.093h.672V7.418h-.672v4.105z"/>
+                                    <path fill-rule="evenodd" d="M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1zm1-3a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2z"/>
+                                    <path fill-rule="evenodd" d="M3.5 0a.5.5 0 0 1 .5.5V1a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 .5-.5zm9 0a.5.5 0 0 1 .5.5V1a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 .5-.5z"/>
+                                </svg>
+                            </div>
+                            <br>
+                        </div>
+                        <button class="btn waves-effect waves-light" style="background: #c4342d; margin-top: -70px;"
+                            type="submit" name="action">Submit
+                        </button>
+                    </div>
+                </div>
+            </div> 
         </form>
     </div>
+
     <br><br><br>
+
     <div *ngFor='let libro of libroEncontrado' style="display: flex; justify-content: center;">
         <form #actualizarLibrosForm = 'ngForm'>
-
-            <div class="row">
-                <form class="col s12">
-                    <div class="row">
-                        <header style="display: flex; justify-content: center; font-family: BankGothic Md BT; font-size: 30px; color:#c4342d; margin-bottom: 25px;">
-                            Base de datos
-                        </header>
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">import_contacts</i>
-                            <input id="icon_prefix" type="text" class="validate" required #tituloLibro="ngModel"
-                            name="tituloLibro" [(ngModel)]="libro.tituloLibro">
-                            <label for="icon_prefix"></label>
-                        </div>
-                   </div>
-                   <div class="row">
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">perm_identity</i>
-                            <input id="icon_telephone" type="tel" class="validate" required #Autor="ngModel"
-                            name="Autor" [(ngModel)]="libro.Autor">
-                            <label for="icon_telephone"></label>
-                        </div>
-                   </div>
-                   <div class="row">
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">description</i>
-                            <input id="icon_telephone" type="tel" class="validate" required #Descripcion="ngModel"
-                            name="Descripcion" [(ngModel)]="libro.Descripcion">
-                            <label for="icon_telephone"></label>
-                        </div>
-                   </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">today</i>
-                            <input id="icon_telephone" type="tel" class="validate" required #anioPublicacion="ngModel"
-                            name="anioPublicacion" [(ngModel)]="libro.anioPublicacion">
-                            <label for="icon_telephone"></label>
-                            <br>
-                            <button (click)='editarLibro(libro)' class="btn waves-effect waves-light" style="background: #c4342d; margin: 2px;" 
-                            type="submit" name="action">Realizar edicion
-                            </button>
-                            <button (click)='eliminarLibro(libro._id)' class="btn waves-effect waves-light" style="background: #c4342d; margin: 2px;" 
-                            type="submit" name="action">Eliminar libro
-                            </button>
-                            <br><br><br>
-                        </div>
+            <div class="card-header" style="background: green; text-align: center; color: beige;">
+                Libro guardado
+            </div>
+            <div class="card-body col-lg-12 mx-auto">
+                <form action="col s10 mx-auto">
+                    <div class="form-group">
+                        <input id="icon_prefix" type="text" class="validate" required #tituloLibro="ngModel"
+                        name="tituloLibro" [(ngModel)]="libro.tituloLibro">
                     </div>
+                    <div class="form-group">
+                        <input id="icon_telephone" type="tel" class="validate" required #Autor="ngModel"
+                        name="Autor" [(ngModel)]="libro.Autor">
+                    </div>
+                    <div class="form-group">
+                        <input id="icon_telephone" type="tel" class="validate" required #Descripcion="ngModel"
+                        name="Descripcion" [(ngModel)]="libro.Descripcion">
+                    </div>
+                    <div class="form-group">
+                        <input id="icon_telephone" type="tel" class="validate" required #anioPublicacion="ngModel"
+                        name="anioPublicacion" [(ngModel)]="libro.anioPublicacion">
+                    </div>
+                    <br>
+                    <button (click)='editarLibro(libro)' class="btn waves-effect waves-light" style="background: #c4342d; margin: 2px;" 
+                    type="submit" name="action">Realizar edicion
+                    </button>
+                    <button (click)='eliminarLibro(libro._id)' class="btn waves-effect waves-light" style="background: #c4342d; margin: 2px;" 
+                    type="submit" name="action">Eliminar libro
+                    </button>
+                    <br><br><br>
                 </form>
             </div>
-
-
-
-
         </form>
     </div>
-
-
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-</body>
-</html>
